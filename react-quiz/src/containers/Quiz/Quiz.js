@@ -35,9 +35,32 @@ class Quiz extends React.Component {
   onAnswerClickHandler = (answerId) => {
     console.log('answerId: ', answerId)
 
-    this.setState({
-      activeQuestion: this.state.activeQuestion + 1
-    })
+    const question = this.state.quiz[this.state.activeQuestion]
+
+    if (question.rightAnswerId === answerId) {
+
+      const timeout = window.setTimeout(() => {
+
+        if (this.isQuizFinished()) {
+          console.log('Finished')
+        } else {
+          this.setState({
+            activeQuestion: this.state.activeQuestion + 1
+          })
+        }
+
+        window.clearTimeout(timeout)
+      }, 1000)
+      
+      
+    } else {
+
+    }
+
+  }
+
+  isQuizFinished(){
+    return this.state.activeQuestion + 1 === this.state.quiz.length
   }
 
   render () {
