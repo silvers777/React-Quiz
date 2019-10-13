@@ -3,6 +3,7 @@ import styles from './FinishedQuiz.module.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faCheck } from '@fortawesome/free-solid-svg-icons'
 import Button from '../UI/Button/Button';
+import { Link } from 'react-router-dom'
 
 const FinishedQuiz = props => {
 
@@ -52,10 +53,14 @@ const FinishedQuiz = props => {
           onClick={props.onRetry}
           type="primary"
         >Repeat</Button>
-        <Button
-          onClick={props.onRetry}
-          type="success"
-        >Go to the list of tests</Button>
+        <Link
+          to="/"
+        >
+          <Button
+            onClick={props.onRetry}
+            type="success"
+          >Go to the list of tests</Button>
+         </Link> 
       </div>
     </div>
   )
