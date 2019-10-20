@@ -8,12 +8,18 @@
   text-transform: uppercase
   font-weight: bold
   font-size: 12px
+  cursor: pointer
 
   &:focus
     outline: none
 
   &:active
     box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .3)
+
+  &:disabled
+    background: #cccccc
+    color: #000000
+    cursor: not-allowed
 
 .error
   background: rgba(240, 87, 108, 1)
